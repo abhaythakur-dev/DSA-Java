@@ -1,6 +1,8 @@
 package Node;
 
 
+
+
 public class RemoveNthFromEnd {
 
     public static Node removeNthFromEnd(Node head, int n) {
