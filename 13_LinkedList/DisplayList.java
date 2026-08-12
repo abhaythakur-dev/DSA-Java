@@ -5,7 +5,7 @@ public class DisplayList {
 
         System.out.print("The val Of Node = ");
         while(temp!=null){
-            System.out.print(temp.val+" ");
+            System.out.print(temp.val +" ");
             temp = temp.next; // Important
         }
         System.out.println();

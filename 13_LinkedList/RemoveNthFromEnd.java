@@ -1,7 +1,3 @@
-package Node;
-
-
-
 
 public class RemoveNthFromEnd {
 
@@ -61,7 +57,7 @@ public class RemoveNthFromEnd {
         head.next.next.next = new Node(40);
         head.next.next.next.next = new Node(50);
 
-        int n = 2;
+        int n = 4;
 
         System.out.println("Before:");
         printList(head);
