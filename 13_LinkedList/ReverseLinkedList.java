@@ -8,17 +8,17 @@ public class ReverseLinkedList {
         // next
         
 
-        Node prev = null;
         Node curr = head;
+        Node prev = null;
+        Node fwd = null;
 
         while (curr != null) {
 
-            Node next = curr.next;
-
+            fwd = curr.next;
             curr.next = prev;
 
             prev = curr;
-            curr = next;
+            curr = fwd;
         }
 
         return prev;
