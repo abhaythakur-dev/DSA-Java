@@ -9,6 +9,7 @@ public class PalindromeLinkedList {
         ArrayList<Integer> arr = new ArrayList<>();
 
         // Store linked list elements in ArrayList
+        
         while (temp != null) {
             arr.add(temp.val);
             temp = temp.next;

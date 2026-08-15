@@ -1,7 +1,17 @@
 public class EvenOddLinkedList {
 
-// Important : Odd Aur Even yahan position ko represent kar rhe hai, values ko nhi
+    // Node class
+    static class Node {
+        int val;
+        Node next;
 
+        Node(int val) {
+            this.val = val;
+            this.next = null;
+        }
+    }
+
+    // Odd position nodes first, then even position nodes
     public static Node oddEvenList(Node head) {
 
         if (head == null || head.next == null) {
@@ -21,16 +31,18 @@ public class EvenOddLinkedList {
             even = even.next;
         }
 
+        // Connect odd list with even list
         odd.next = evenHead;
 
         return head;
     }
 
-    public static void printList(Node t) {
+    // Print LinkedList
+    public static void printList(Node head) {
 
-        while (t != null) {
-            System.out.print(t.val + " -> ");
-            t = t.next;
+        while (head != null) {
+            System.out.print(head.val + " -> ");
+            head = head.next;
         }
 
         System.out.println("null");
@@ -38,6 +50,7 @@ public class EvenOddLinkedList {
 
     public static void main(String[] args) {
 
+        // 1 -> 2 -> 3 -> 4 -> 5
         Node head = new Node(1);
         head.next = new Node(2);
         head.next.next = new Node(3);
@@ -53,4 +66,3 @@ public class EvenOddLinkedList {
         printList(head);
     }
 }
-
