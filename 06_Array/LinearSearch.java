@@ -1,7 +1,7 @@
 public class LinearSearch {
     public static void main(String[] args) {
         int[] arr = { 18, 7, 17, 45, 77, 333 };
-        int target = 19;
+        int target = 18;
         boolean flag = false; // False means Target is not Available in Array
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target) {
@@ -16,6 +16,6 @@ public class LinearSearch {
         else {
             System.out.println("Target is Missing in Array");
         }
-           System.out.println("Virat Kohli = 18 ");
+         
     }
-}
+} 

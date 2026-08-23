@@ -1,5 +1,7 @@
 import java.util.Stack;
 public class PushElementAtBottom{
+    
+    // Using Recursion
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
         st.push(10); // bottom
@@ -12,7 +14,17 @@ public class PushElementAtBottom{
 
         pushAtBottom(st,ele);
         System.out.println("After = " + st);
+        reverse(st);
+        System.out.println(st);
+       
     }
+        private static void reverse(Stack<Integer> st){
+            if(st.size()<=1) return;
+            int top = st.pop();
+            reverse(st);
+            pushAtBottom(st,top);
+        }
+
         private static void pushAtBottom(Stack<Integer> st, int ele){
             if(st.size()==0){
                 st.push(ele);
