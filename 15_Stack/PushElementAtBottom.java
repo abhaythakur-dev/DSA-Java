@@ -8,7 +8,6 @@ public class PushElementAtBottom{
         st.push(20);
         st.push(30);
         st.push(40); // top
-
         int ele = 50;
         System.out.println("Before = "+st);
 
