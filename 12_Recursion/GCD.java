@@ -17,6 +17,7 @@ public class GCD {
         int b = sc.nextInt();
         int hcf = gcd(a,b);
         System.out.print("HCF = "+hcf);
-    }
 
+        sc.close();
+    }
 }
