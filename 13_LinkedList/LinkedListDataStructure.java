@@ -1,6 +1,4 @@
 
-
-
 class Linkedlist{  // User Defined Data Structure
     Node head;
     Node tail;
