@@ -1,19 +1,24 @@
-
 import java.util.Queue;
 import java.util.LinkedList;
 
-public class TraversalAQueue{
-    private static void display(Queue<Integer> q){
+public class TraversalAQueue {
+
+    private static void display(Queue<Integer> q) {
         int n = q.size();
-        for(int i=0;i<n;i++){
-            System.out.print(q.peek()+" ");
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(q.peek() + " ");
             q.add(q.remove());
         }
+
         System.out.println();
     }
+
     public static void main(String[] args) {
+
         Queue<Integer> q = new LinkedList<>();
-        q.add(10); // Front 
+
+        q.add(10); // Front
         q.add(20);
         q.add(30);
         q.add(40);
@@ -21,30 +26,83 @@ public class TraversalAQueue{
 
         display(q);
 
-        addAtIndex(q,5 ,60);
+        addAtIndex(q, 5, 60);
         display(q);
 
+        System.out.println("Element at index 2 : " + peek(q, 2));
+
+        System.out.println("Removed element at index 2 : " + remove(q, 2));
+
+        display(q);
     }
-    private static void addAtIndex(Queue<Integer> q, int idx , int val){
-        if(idx<0 || idx> q.size()){
-            System.out.println("Invalid Index ");
+
+    private static void addAtIndex(Queue<Integer> q, int idx, int val) {
+
+        if (idx < 0 || idx > q.size()) {
+            System.out.println("Invalid Index");
             return;
         }
+
         int n = q.size();
-        for(int i=1;i<=idx;i++){
+
+        for (int i = 1; i <= idx; i++) {
             q.add(q.remove());
         }
+
         q.add(val);
-        for(int i=1;i<=n-idx;i++){
+
+        for (int i = 1; i <= n - idx; i++) {
             q.add(q.remove());
         }
     }
 
-    private static int peek(int idx){
-        return -1; // complete ur self
+    // 1. Peek element at given index
+    private static int peek(Queue<Integer> q, int idx) {
+
+        if (idx < 0 || idx >= q.size()) {
+            System.out.println("Invalid Index");
+            return -1;
+        }
+
+        int n = q.size();
+        int ans = -1;
+
+        for (int i = 0; i < n; i++) {
+
+            int x = q.remove();
+
+            if (i == idx) {
+                ans = x;
+            }
+
+            q.add(x);
+        }
+
+        return ans;
     }
 
-    private static int remove(int idx){
-        return -1; // complete ur self
+    // 2. Remove element at given index
+    private static int remove(Queue<Integer> q, int idx) {
+
+        if (idx < 0 || idx >= q.size()) {
+            System.out.println("Invalid Index");
+            return -1;
+        }
+
+        int n = q.size();
+        int ans = -1;
+
+        for (int i = 0; i < n; i++) {
+
+            int x = q.remove();
+
+            if (i == idx) {
+                ans = x;       // Don't add it back
+            } else {
+                q.add(x);
+            }
+        }
+
+        return ans;
     }
 }
