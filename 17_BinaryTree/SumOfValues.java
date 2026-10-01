@@ -1,11 +1,11 @@
 public class SumOfValues {
 
     static class Node {
-        int data;
+        int val;
         Node left, right;
 
-        Node(int data) {
-            this.data = data;
+        Node(int val) {
+            this.val = val;
         }
     }
 
@@ -14,7 +14,7 @@ public class SumOfValues {
             return 0;
         }
 
-        return root.data + sum(root.left) + sum(root.right);
+        return root.val + sum(root.left) + sum(root.right);
     }
 
     public static void main(String[] args) {
