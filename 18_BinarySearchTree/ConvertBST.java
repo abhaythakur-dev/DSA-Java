@@ -63,7 +63,7 @@ public class ConvertBST {
 
         root = solution.convertBST(root);
 
-        System.out.println("Greater Sum Tree (Inorder):");
+        System.out.print("Greater Sum Tree (Inorder) =  ");
         solution.printInorder(root);
     }
 }
